@@ -1,0 +1,23 @@
+{
+  "name": "gitbook-plugin-terminull",
+  "version": "1.0.0",
+  "description": "Gitbook modern terminal",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridaeh/gitbook-plugin-terminull.git"
+  },
+  "keywords": [
+    "terminal",
+    "gitbook"
+  ],
+  "author": "Ridae HAMDANI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ridaeh/gitbook-plugin-terminull/issues"
+  },
+  "homepage": "https://github.com/ridaeh/gitbook-plugin-terminull#readme",
+  "engines": {
+    "gitbook": ">2.5.0"
+  }
+}
