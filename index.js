@@ -1,7 +1,7 @@
-function processBlock(block) {
+function processBlock(rootBlock) {
   var term = {};
-
-  block.each(_blk => {
+  var blocks = [rootBlock].concat(rootBlock.blocks);
+  blocks.forEach(_blk => {
     term[_blk.name] = _blk.body.trim();
   });
   return '<div class="terminull">' +
@@ -11,7 +11,7 @@ function processBlock(block) {
             '<div class="terminullButtons terminullZoom"></div>' +
           '</div>' +
           '<div class="terminullScreen">' +
-            '<span class="terminullDirectory">~/' + term.directory + '</span>$' +
+            '<span class="terminullDirectory">~/' + term.directory + '</span>$ ' +
             '<span class="terminullCommand">' + term.command + '</span>' +
             '<span class="terminullOutput">' + term.output + '</span>' +
           '</div>'+
@@ -21,11 +21,12 @@ function processBlock(block) {
 module.exports = {
   website: {
     assets: './assets',
-    css: ['terminull.css']
+    css: ['terminull.css'],
+    js: ['terminull.js']
   },
   blocks: {
-    blocks: ['directory', 'command', 'output'],
     term: {
+      blocks: ['directory', 'command', 'output'],
       process: processBlock
     }
   }

@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-terminull",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Gitbook modern terminal",
   "main": "index.js",
   "repository": {
