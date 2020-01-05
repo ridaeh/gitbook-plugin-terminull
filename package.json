@@ -9,15 +9,20 @@
   },
   "keywords": [
     "terminal",
-    "gitbook"
+    "gitbook",
+    "gitbook-plugin",
+    "plugin"
   ],
   "author": "Ridae HAMDANI",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ridaeh/gitbook-plugin-terminull/issues"
   },
-  "homepage": "https://github.com/ridaeh/gitbook-plugin-terminull#readme",
+  "homepage": "https://github.com/ridaeh/gitbook-plugin-terminull",
   "engines": {
     "gitbook": ">2.5.0"
+  },
+  "dependencies": {
+    "ejs": "^3.0.1"
   }
 }

@@ -1,5 +1,4 @@
 function copyCommandTerminull(command) {
-    console.log('clicked',command)
     var dummy = document.createElement("textarea");
     document.body.appendChild(dummy);
     dummy.value=command;

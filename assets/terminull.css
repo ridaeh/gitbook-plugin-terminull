@@ -26,7 +26,6 @@
 
 .terminullComment {
   color: seagreen;
-  font-weight: bold;
   font-style: italic;
 }
 
@@ -63,3 +62,6 @@
 .terminullOutput {
   display: block;
 }
+
+.terminullCopyBtn { transition: all .2s ease-in-out; }
+.terminullCopyBtn:hover { transform: scale(1.1); }

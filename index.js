@@ -1,21 +1,25 @@
+var ejs = require('ejs');
+const path = require('path');
+
 function processBlock(rootBlock) {
-  var term = {};
-  var blocks = [rootBlock].concat(rootBlock.blocks);
-  blocks.forEach(_blk => {
+  var terminulls = [];
+  var term = {}
+  rootBlock.blocks.forEach(_blk => {
+    if(term[_blk.name]){
+      terminulls.push(term)
+      term = {}
+    } 
     term[_blk.name] = _blk.body.trim();
   });
-  return '<div class="terminull">' +
-          '<div class="terminullMenu">' +
-            '<div class="terminullButtons terminullClose"></div>' +
-            '<div class="terminullButtons terminullMinimize"></div>' +
-            '<div class="terminullButtons terminullZoom"></div>' +
-          '</div>' +
-          '<div class="terminullScreen">' +
-            '<span class="terminullDirectory">~/' + term.directory + '</span>$ ' +
-            '<span class="terminullCommand">' + term.command + '</span>' +
-            '<span class="terminullOutput">' + term.output + '</span>' +
-          '</div>'+
-        '</div>';
+  terminulls.push(term)
+  return new Promise(function(resolve, reject){
+           ejs.renderFile(path.join(__dirname, './src/terminull.html.ejs'),{terminulls:terminulls},function(err, str){
+             if(err) {
+               throw err
+             }
+             resolve(str)
+           })
+        })
 }
 
 module.exports = {
@@ -26,7 +30,7 @@ module.exports = {
   },
   blocks: {
     term: {
-      blocks: ['directory', 'command', 'output'],
+      blocks: ['directory', 'command','comment', 'output'],
       process: processBlock
     }
   }
