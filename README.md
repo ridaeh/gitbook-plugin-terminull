@@ -21,7 +21,22 @@ To use Terminull plugin in your Gitbook project, add the terminull plugin to the
 
 ## Create you terminal
 
-First, you need to create a terminal. Each terminal should have a directory where command is excuted, command and output of the command.
+To create a terminal you can use one of this options:
+ - Code markdown with `term` as language :
+<pre ><code>```<strong style="color:green">term</strong>
+gitbook-plugin-terminull$ echo 'hello terminull' # This will print hello terminull
+hello terminull
+```
+</code></pre>
+
+e.g :
+<pre lang="no-highlight"><code>```<strong style="color:green">term</strong>
+echo 'hello terminull' 
+```
+</code></pre>
+ - Gitbook term tag
+
+Each terminal should have a directory where command is excuted, command and output of the command.
 
 ```
 {% term %}
