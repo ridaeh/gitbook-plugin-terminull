@@ -20,8 +20,8 @@
   color: white;
   text-align: left;
   font-family: monospace;
-  overflow: hidden;
-  word-wrap:break-word;
+  white-space: nowrap;
+  overflow-y: auto;
 }
 
 .terminullComment {
@@ -61,7 +61,12 @@
 
 .terminullOutput {
   display: block;
+  white-space: pre-line;
 }
 
-.terminullCopyBtn { transition: all .2s ease-in-out; }
-.terminullCopyBtn:hover { transform: scale(1.1); }
+.terminullCopyBtn {
+  transition: all 0.2s ease-in-out;
+}
+.terminullCopyBtn:hover {
+  transform: scale(1.1);
+}

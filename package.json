@@ -23,6 +23,8 @@
     "gitbook": ">2.5.0"
   },
   "dependencies": {
-    "ejs": "^3.0.1"
+    "ejs": "^3.0.1",
+    "kramed": "^0.5.6",
+    "kramed-markdown-renderer": "^0.1.2"
   }
 }
