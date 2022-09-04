@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-terminull",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "🦄 Terminull is a gitbook plugin allows you to create a modern terminal for your gitbook pages in order to documente your commands and it gives you a fast way to copy the command .",
   "main": "index.js",
   "repository": {
