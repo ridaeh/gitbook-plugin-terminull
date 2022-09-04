@@ -5,6 +5,7 @@ const kramed = require('./src/kramed');
 function processBlock(rootBlock) {
   var terminulls = [];
   var term = {};
+  var options = this.options.pluginsConfig["terminull"];
   rootBlock.blocks.forEach(_blk => {
     if (term[_blk.name]) {
       terminulls.push(term);
@@ -16,7 +17,7 @@ function processBlock(rootBlock) {
   return new Promise(function(resolve, reject) {
     ejs.renderFile(
       path.join(__dirname, './src/terminull.html.ejs'),
-      { terminulls: terminulls },
+      { terminulls: terminulls ,options: options },
       function(err, str) {
         if (err) {
           throw err;

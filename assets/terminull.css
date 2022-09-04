@@ -1,12 +1,25 @@
+:root {
+  --terminull-background-color: #282d39;
+  --terminull-color: white;
+}
+
+[data-theme="light"] {
+  --terminull-background-color:#fdf6e4;
+  --terminull-color: #282d39;
+}
+
 .terminull {
-  background-color: #282d39;
+  background-color: var(--terminull-background-color);
   border-radius: 5px;
+  font-family: "Ubuntu Mono", Consolas, Menlo, Courier, monospace;
+  font-size: 1em;
 }
 
 .terminullMenu {
   box-sizing: border-box;
-  height: 25px;
+  height: 20px;
   margin: 0 auto;
+  padding-left: 10px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
@@ -14,10 +27,10 @@
 .terminullScreen {
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  color: white;
+  color: var(--terminull-color);
   text-align: left;
   font-family: monospace;
   white-space: nowrap;
@@ -30,13 +43,13 @@
 }
 
 .terminullButtons {
-  height: 10px;
-  width: 10px;
+  height: 8px;
+  width: 8px;
   border-radius: 50%;
   border: 1px solid #000;
   position: relative;
-  top: 6px;
-  left: 6px;
+  top: 5px;
+  left: 5px;
   background-color: #ff3b47;
   border-color: #9d252b;
   display: inline-block;

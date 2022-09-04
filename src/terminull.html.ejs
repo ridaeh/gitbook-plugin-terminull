@@ -1,18 +1,20 @@
-<div class="terminull">
-    <div class="terminullMenu">
-      <div class="terminullButtons terminullClose"></div>
-      <div class="terminullButtons terminullMinimize"></div>
-      <div class="terminullButtons terminullZoom"></div>
-    </div>
-    <div class="terminullScreen">
-        <% terminulls.forEach(function(terminull){ %>
-          <span class="terminullDirectory">~/<%= terminull.directory %></span>$ 
-          <span class="terminullCommand"><%= terminull.command%></span>
-          <% if (terminull.comment) { %> 
-            <span class="terminullComment"># <%= terminull.comment%></span>
-          <% } %>
-          <i class="fa fa-clone t-copy terminullCopyBtn" onclick="copyCommandTerminull(`<%= terminull.command%>`)"></i>
-          <span class="terminullOutput"><%= terminull.output%></span>
-        <% }); %>
-    </div>
+<div class="terminull" data-theme="<%= options.theme %>" >
+  <div class="terminullMenu">
+    <div class="terminullButtons terminullClose"></div>
+    <div class="terminullButtons terminullMinimize"></div>
+    <div class="terminullButtons terminullZoom"></div>
+  </div>
+  <div class="terminullScreen">
+      <% terminulls.forEach(function(terminull){ %>
+        <span class="terminullDirectory">~/<%= terminull.directory %></span>$ 
+        <span class="terminullCommand"><%= terminull.command%></span>
+        <% if (terminull.comment) { %> 
+          <span class="terminullComment"># <%= terminull.comment%></span>
+        <% } %>
+        <% if(options.copy_button && options.copy_button !== 'disabled'){ %> 
+          <i class="fa fa-clone t-copy terminullCopyBtn" onclick="copyCommandTerminull(`<%= terminull.command%>`)"></i> 
+        <% } %>
+        <span class="terminullOutput"><%= terminull.output%></span>
+      <% }); %>
+  </div>
 </div>

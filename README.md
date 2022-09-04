@@ -1,13 +1,20 @@
 
 <div align="center">
  <h1> Terminull </h1>
- <p>Terminull is a <a href="https://www.npmjs.com/package/gitbook">gitbook</a> plugin allows you to create a modern terminal for your gitbook pages in order to documente your commands and it gives you a fast way to copy the command .</p>
-  <br>
-  <br>
-	<a href="https://www.npmjs.com/package/gitbook-plugin-terminull"><img  src="https://img.shields.io/npm/v/gitbook-plugin-terminull/latest?color=green" alt="npm version"></a>
-  <br>
-  <br>
-  <img src="https://raw.githubusercontent.com/ridaeh/gitbook-plugin-terminull/master/preview.png">
+ <p>Terminull is a <a href="https://www.npmjs.com/package/gitbook">gitbook</a> plugin allows you to create a modern terminal for your gitbook pages it helps documente your commands and gives you a fast way to copy the command .</p>
+ </div>
+<a href="https://www.npmjs.com/package/gitbook-plugin-terminull"><img  src="https://img.shields.io/npm/v/gitbook-plugin-terminull/latest?color=green" alt="npm version"/></a>
+
+ ## Themes:
+ ### Dark theme
+
+ <div align="center">
+  <img src="https://raw.githubusercontent.com/ridaeh/gitbook-plugin-terminull/master/dark_theme_preview.png"/>
+</div>
+
+### Light theme
+<div align="center">
+  <img src="https://raw.githubusercontent.com/ridaeh/gitbook-plugin-terminull/master/light_theme_preview.png"/>
 </div>
 
 ## How to use it?
@@ -15,16 +22,22 @@ To use Terminull plugin in your Gitbook project, add the terminull plugin to the
 
 ```json
 {
-    "plugins": ["terminull"]
+  "plugins": ["terminull"],
+  "pluginsConfig": {
+    "terminull": {
+      "theme": "dark", // use "light" for light theme
+      "copy_button": "enabled" // "disabled" to hide the copy button
+    }
+  }
 }
 ```
 
 ## Create you terminal
 
-To create a terminal you can use one of this options:
+To create a terminal you can use one of two options:
  - Code markdown with `term` as language :
 <pre ><code>```<strong style="color:green">term</strong>
-gitbook-plugin-terminull$ echo 'hello terminull' # This will print hello terminull
+terminull$ echo 'hello terminull' # This will print hello terminull
 hello terminull
 ```
 </code></pre>
@@ -34,6 +47,7 @@ e.g :
 echo 'hello terminull' 
 ```
 </code></pre>
+
  - Gitbook term tag
 
 Each terminal should have a directory where command is excuted, command and output of the command.
